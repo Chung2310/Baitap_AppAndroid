@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Đặt</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function NhanKQ(s){
+            document.getElementById('result').innerHTML=s;
+        }
+        function tinhtoan(){
+            var ten=document.getElementById('roomType').value;
+            var gio=document.getElementById('hours').value;
+            window.Android.xuly(ten,gio);
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Nhập Thông Tin Phòng</h1>
+
+    <form id="roomForm">
+        <div class="form-group">
+            <label for="roomType">Loại phòng:</label>
+            <select id="roomType" name="roomType" required>
+                <option value="">-- Chọn loại phòng --</option>
+                <option value="thuong">thuong</option>
+                <option value="vip">vip</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="room">Tên phòng:</label>
+            <input type="text" id="room" name="room" placeholder="Nhập tên phòng" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hours">Số giờ:</label>
+            <input type="number" id="hours" name="hours" placeholder="Nhập số giờ" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <button type="button" id="calculateBtn" onclick="tinhtoan()">Kết quả</button>
+        </div>
+    </form>
+    <div id="result"></div>
+</div>
+
+
+</body>
+</html>
