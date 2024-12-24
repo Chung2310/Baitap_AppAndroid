@@ -7,46 +7,105 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function NhanKQ(s){
-            document.getElementById('result').innerHTML=s;
+            document.getElementById('result').innerHTML = s;
         }
         function tinhtoan(){
-            var ten=document.getElementById('roomType').value;
-            var gio=document.getElementById('hours').value;
-            window.Android.xuly(ten,gio);
+            var ten = document.getElementById('roomType').value;
+            var gio = document.getElementById('hours').value;
+            window.Android.xuly(ten, gio);
         }
     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .info {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .container, audio, video, iframe {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>Nhập Thông Tin Phòng</h1>
 
-    <form id="roomForm">
-        <div class="form-group">
-            <label for="roomType">Loại phòng:</label>
-            <select id="roomType" name="roomType" required>
-                <option value="">-- Chọn loại phòng --</option>
-                <option value="thuong">thuong</option>
-                <option value="vip">vip</option>
-            </select>
-        </div>
+<h1>Nhập Thông Tin Phòng</h1>
+<div class="form-group">
+    <label for="roomType">Loại phòng:</label>
+    <select id="roomType" name="roomType" required>
+        <option value="">-- Chọn loại phòng --</option>
+        <option value="thuong">thuong</option>
+        <option value="vip">vip</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="room">Tên phòng:</label>
+    <input type="text" id="room" name="room" placeholder="Nhập tên phòng" required>
+</div>
+<div class="form-group">
+    <label for="hours">Số giờ:</label>
+    <input type="number" id="hours" name="hours" placeholder="Nhập số giờ" min="1" required>
+</div>
+<div class="form-group">
+    <button type="button" id="calculateBtn" onclick="tinhtoan()">Kết quả</button>
+</div>
+<div id="result"></div>
 
-        <div class="form-group">
-            <label for="room">Tên phòng:</label>
-            <input type="text" id="room" name="room" placeholder="Nhập tên phòng" required>
-        </div>
-
-        <div class="form-group">
-            <label for="hours">Số giờ:</label>
-            <input type="number" id="hours" name="hours" placeholder="Nhập số giờ" min="1" required>
-        </div>
-
-        <div class="form-group">
-            <button type="button" id="calculateBtn" onclick="tinhtoan()">Kết quả</button>
-        </div>
-    </form>
-    <div id="result"></div>
+<div class="info">
+    <label><strong>Họ và Tên:</strong> Đỗ Đức Chung</label><br>
+    <label><strong>MSSV:</strong> K215480106085</label><br>
+    <label><strong>Email:</strong> chunga00d@gmail.com</label><br>
+    <label><strong>Số điện thoại:</strong> 0961954521</label><br>
+    <label><strong>Địa chỉ:</strong> Ngô Đạo - Tân Hưng - Sóc Sơn - Hà Nội</label>
 </div>
 
+<audio controls>
+    <source src="mp3/amthanh.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<video width="320" height="240" controls>
+    <source src="mp4/video1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/XM7V7PQPNx8"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+</iframe>
 
 </body>
 </html>
